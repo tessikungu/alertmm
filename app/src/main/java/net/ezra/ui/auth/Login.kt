@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,11 +24,14 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.android.material.resources.TextAppearance
 import com.google.firebase.auth.FirebaseAuth
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_PROFILE
 import net.ezra.navigation.ROUTE_SIGNUP
+import java.time.format.TextStyle
+import androidx.compose.material.TextFieldColors as TextFieldColors1
 
 //import net.ezra.navigation.ROUTE_REGISTER
 
@@ -89,7 +94,7 @@ fun LoginScreen(navController: NavController) {
                             value = email,
                             onValueChange = { email = it },
                             label = { Text("Email",color = Color.White) },
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth() .background(Color.Gray)
                         )
                         Spacer(modifier = Modifier.height(8.dp))
 
@@ -97,8 +102,11 @@ fun LoginScreen(navController: NavController) {
                             value = password,
                             onValueChange = { password = it },
                             label = { Text("Password",color = Color.White) },
+
                             visualTransformation = PasswordVisualTransformation(),
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(Color.Gray)
                         )
                         Spacer(modifier = Modifier.height(16.dp))
 

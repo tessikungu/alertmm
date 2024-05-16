@@ -18,7 +18,6 @@ import net.ezra.ui.reset.ResetScreen
 import net.ezra.ui.create.CreateScreen
 import net.ezra.ui.notice.NoticeScreen
 import net.ezra.ui.profile.ProfileScreen
-import net.ezra.ui.students.AddStudents
 
 @Composable
 fun AppNavHost(
@@ -82,9 +81,7 @@ fun AppNavHost(
 
 
 
-        composable(ROUTE_ADD_STUDENTS) {
-            AddStudents(navController)
-        }
+
 
         composable(ROUTE_PROFILE) {
             ProfileScreen(navController)

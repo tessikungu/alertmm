@@ -53,7 +53,7 @@ fun RegisterScreen(navController: NavController) {
             value = email,
             onValueChange = { email = it },
             label = { Text("Email", color = Color.White) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth() .background(Color.Gray)
         )
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -63,7 +63,7 @@ fun RegisterScreen(navController: NavController) {
             onValueChange = { password = it },
             label = { Text("Password", color = Color.White) },
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth() .background(Color.Gray)
         )
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -72,7 +72,7 @@ fun RegisterScreen(navController: NavController) {
             onValueChange = { confirmPassword = it },
             label = { Text("Confirm Password",color = Color.White) },
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth() .background(Color.Gray)
         )
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -112,8 +112,8 @@ fun RegisterScreen(navController: NavController) {
                 modifier = Modifier
 
                     .clickable {
-                        navController.navigate(ROUTE_SIGNUP) {
-                            popUpTo(ROUTE_LOGIN) { inclusive = true }
+                        navController.navigate(ROUTE_LOGIN) {
+                            popUpTo(ROUTE_SIGNUP) { inclusive = true }
                         }
                     },
                 text = "Go to login",
